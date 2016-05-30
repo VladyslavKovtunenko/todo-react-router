@@ -1,0 +1,46 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "TodoList",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladyslavKovtunenko/todo-reactjs.git"
+  },
+  "keywords": [
+    "TodoList"
+  ],
+  "author": "Vladyslav Kovtunenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladyslavKovtunenko/todo-reactjs/issues"
+  },
+  "homepage": "https://github.com/VladyslavKovtunenko/todo-reactjs#readme",
+  "dependencies": {
+    "babel-core": "^6.8.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "bootstrap-loader": "^1.0.10",
+    "bootstrap-sass": "~3.3.1",
+    "react": "^15.0.2",
+    "react-bootstrap": "^0.29.4",
+    "react-dom": "^15.0.2",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-api-middleware": "^1.0.2",
+    "webpack": "^1.13.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.8.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "redux-devtools": "^3.3.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
