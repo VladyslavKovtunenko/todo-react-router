@@ -5,7 +5,7 @@ export default function showTask(){
         [CALL_API]: {
             endpoint: 'http://tasks-for-day.herokuapp.com:80/api/v1/tasks',
             method: 'GET',
-            type: ['SUCCESS', 'FAILURE']
+            type: ['REQUEST', 'SUCCESS', 'FAILURE']
         }
     };
 }

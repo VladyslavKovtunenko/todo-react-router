@@ -11,6 +11,6 @@ import showTask from './actions/showTask'
 
 const store = configureStore([]);
 
-store.dispatch(showTask);
-
+store.dispatch(showTask());
+console.log(store.getState());
 

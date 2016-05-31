@@ -7,7 +7,8 @@ export const todo = (state = [], action) => {
             console.log(action);
             return [];
         default:
-            return state;
+            console.log(action);
+            return [1, 2];
 
     }
 };
