@@ -1,6 +1,8 @@
 import React from 'react'
 import {FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
 import showTask from "../actions/showTask";
+import {connect} from 'react-redux'
+
 
 class AddTask extends React.Component{
     constructor(props){

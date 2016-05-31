@@ -4,6 +4,14 @@ module.exports = {
         path: "./",
         filename: "bundle.js"
     },
+    devServer: {
+        proxy: {
+            '/api/v1*': {
+                target: ' http://tasks-for-day.herokuapp.com',
+                changeOrigin: true
+            }
+        }
+    },
     module: {
         loaders: [
             {

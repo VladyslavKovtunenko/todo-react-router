@@ -8,7 +8,7 @@ class TaskTable extends React.Component{
     constructor(props){
         super(props);
         this.props.getTasks();
-        console.log(this.props.tasks);
+        //console.log(this.props.tasks);
     }
 
     render(){
