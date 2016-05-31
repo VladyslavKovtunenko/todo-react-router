@@ -2,13 +2,13 @@ export const todo = (state = [], action) => {
     switch (action.type){
         case 'SUCCESS':
             console.log(action);
-            return [];
+            return action.payload.tasks;
         case 'FAILURE':
             console.log(action);
-            return [];
+            return state;
         default:
             console.log(action);
-            return [1, 2];
+            return state;
 
     }
 };

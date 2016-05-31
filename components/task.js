@@ -1,5 +1,6 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
+import DeleteButton from './deleteButton'
 
 class Task extends React.Component{
     constructor(props){
@@ -9,9 +10,9 @@ class Task extends React.Component{
     render(){
         return (
             <tr>
-                <td>{this.props.task.title}</td>
+                <td>{this.props.task.name}</td>
                 <td>{this.props.task.description}</td>
-                <td><Button>Edit</Button><Button>Delete</Button></td>
+                <td><Button>Edit</Button><DeleteButton id={this.props.task.id}/></td>
             </tr>
         )
     }

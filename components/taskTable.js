@@ -1,24 +1,16 @@
 import React from 'react'
 import {Table} from 'react-bootstrap'
 import {Grid, Row, Col} from 'react-bootstrap'
+import {connect} from 'react-redux'
 import Task from './task'
+import showTask from "../actions/showTask";
 
 class TaskTable extends React.Component{
     constructor(props){
         super(props);
+        this.props.getTasks();
         console.log(this.props.tasks);
     }
-
-    static defaultProps = {
-        tasks: [{
-            title: 'hey! ho!',
-            description: 'let`s go!'
-        },
-        {
-            title: 'don`t stop me',
-            description: 'right now'
-        }]
-    };
 
     render(){
         return (
@@ -47,5 +39,21 @@ class TaskTable extends React.Component{
         );
     }
 }
+
+const mapStateToProps = (store) => {
+    return {
+        tasks: store
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getTasks: () => {
+            dispatch(showTask())
+        }
+    }
+};
+
+TaskTable = connect(mapStateToProps, mapDispatchToProps)(TaskTable);
 
 export default TaskTable
