@@ -1,22 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './app.scss'
 import TaskTable from './components/taskTable'
+import {createStore} from 'redux'
+import {CALL_API} from 'redux-api-middleware'
+import {todo} from "./redusers/reduser";
+/*{
+[CALL_API]: {
+    endpoint: 'http://www.example.com/api/users',
+        method: 'GET',
+        types: ['REQUEST', 'SUCCESS', 'FAILURE']
+}
+}*/
 
-const tasks =[
-    {
-        title: 'hey! ho!',
-        description: 'let`s go!'
-    },
-    {
-        title: 'don`t stop me',
-        description: 'right now'
-    }
-];
-
-console.log(tasks);
+const store = createStore(todo);
 
 ReactDOM.render(
-    <TaskTable tasks = {tasks}/>,
+    <TaskTable />,
     document.getElementById('container')
 );

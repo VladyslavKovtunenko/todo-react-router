@@ -1,4 +1,5 @@
 import React from 'react'
+import {Button} from 'react-bootstrap'
 
 class Task extends React.Component{
     constructor(props){
@@ -10,7 +11,7 @@ class Task extends React.Component{
             <tr>
                 <td>{this.props.task.title}</td>
                 <td>{this.props.task.description}</td>
-                <td><button>Edit</button><button>Delete</button></td>
+                <td><Button>Edit</Button><Button>Delete</Button></td>
             </tr>
         )
     }
