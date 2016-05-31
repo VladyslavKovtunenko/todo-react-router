@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import TaskTable from './components/taskTable'
+import App from './components/app'
 import configureStore from "./configureStore";
 import {Provider} from 'react-redux'
 
@@ -8,7 +8,7 @@ const store = configureStore([]);
 
 ReactDOM.render(
     <Provider store = {store}>
-        <TaskTable />
+        <App/>
     </Provider>,
     document.getElementById('container')
 );

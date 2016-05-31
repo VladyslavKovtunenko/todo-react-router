@@ -1,9 +1,8 @@
 import React from 'react'
 import {Table} from 'react-bootstrap'
-import {Grid, Row, Col} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import Task from './task'
-import showTask from "../actions/showTask";
+import showTask from "../actions/showTask"
 
 class TaskTable extends React.Component{
     constructor(props){
@@ -14,28 +13,20 @@ class TaskTable extends React.Component{
 
     render(){
         return (
-            <Grid>
-                <Row className="show-grid">
-                    <Col md={1}></Col>
-                    <Col md={6}>
-                        <h2>My task list</h2>
-                        <Table striped bordered condensed hover>
-                            <thead>
-                                <tr>
-                                    <td>Title</td>
-                                    <td>Description</td>
-                                    <td>Actions</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {this.props.tasks.map((task) => (
-                                    <Task task={task}/>
-                                ))}
-                            </tbody>
-                        </Table>
-                    </Col>
-                </Row>
-            </Grid>
+            <Table striped bordered condensed hover>
+                <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Description</td>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.props.tasks.map((task) => (
+                        <Task task={task}/>
+                    ))}
+                </tbody>
+            </Table>
         );
     }
 }
