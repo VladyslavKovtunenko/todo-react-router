@@ -1,8 +1,8 @@
 import React from 'react'
 import {FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
 import showTask from "../actions/showTask";
+import add from "../actions/addTask";
 import {connect} from 'react-redux'
-
 
 class AddTask extends React.Component{
     constructor(props){
@@ -28,13 +28,16 @@ class AddTask extends React.Component{
     }
 
     send(){
-        console.log(this.state);
         const task = {
             name: this.state.title,
             description: this.state.description
         };
 
         this.props.addTask(task);
+        this.setState({
+            title: '',
+            description: ''
+        });
     }
 
     render(){
@@ -72,13 +75,11 @@ const mapStateToProps = (store) => {
     }
 };
 
-const mapDispatchToProps = () => {
+const mapDispatchToProps = (dispatch) => {
     return {
         addTask: (task) => {
-            /*
-            * Add Task
-            * */
-            showTask();
+            dispatch(add(task));
+            dispatch(showTask());
         }
     }
 };

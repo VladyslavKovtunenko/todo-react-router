@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         del: (id) => {
             dispatch(deleteTask(id));
-            showTask();
+            dispatch(showTask());
         }
     }
 };
