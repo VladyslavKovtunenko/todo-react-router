@@ -1,16 +1,15 @@
 import React from 'react'
 import TaskTable from './taskTable'
 import AddTask from './addTask'
-import {Grid, Row, Col} from 'react-bootstrap'
-import { Router, Route, IndexRoute, Link, IndexLink, browserHistory } from 'react-router'
+import {Grid, Row, Col, Button} from 'react-bootstrap'
+import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
 
 
 class Links extends React.Component {
     render() {
         return(
             <div>
-                <Link to="/tasks">Tasks</Link>
-                <Link to="/tasks/new">New task</Link>
+                {this.props.children}
             </div>
         )
     }
@@ -19,10 +18,16 @@ class Links extends React.Component {
 class Tasks extends React.Component {
     render() {
         return (
-            <div>
-                <h2>My task list</h2>
-                <TaskTable/>
-            </div>
+            <Grid>
+                <Row className="show-grid">
+                    <Col md={1}/>
+                    <Col md={7}>
+                        <h2>My task list</h2>
+                        <TaskTable/>
+                        <Link to="/tasks/new"><Button>New task</Button></Link>
+                    </Col>
+                </Row>
+            </Grid>
         )
     }
 }
@@ -30,33 +35,28 @@ class Tasks extends React.Component {
 class NewTask extends React.Component {
     render() {
         return (
-            <div>
-                <h2>New task</h2>
-                <AddTask/>
-            </div>
+            <Grid>
+                <Row className="show-grid">
+                    <Col md={1}/>
+                    <Col md={7}>
+                        <h2>New task</h2>
+                        <AddTask/>
+                        <Link to="/tasks"><Button>Back</Button></Link>
+                    </Col>
+                </Row>
+            </Grid>
         )
     }
 }
-
-/*class Index extends React.Component {
-    render() {
-        return (
-            <div>
-                <h2>Index!</h2>
-            </div>
-        )
-    }
-}*/
 
 class App extends React.Component {
     render() {
         return (
             <Router history={browserHistory}>
                 <Route path="/" component={Links}>
-                    <IndexRoute >
-                        <Route path="tasks" component={Tasks}/>
-                        <Route path="tasks/new" component={NewTask}/>
-                    </IndexRoute>
+                    <IndexRoute component={Tasks}/>
+                    <Route path="tasks" component={Tasks}/>
+                    <Route path="tasks/new" component={NewTask}/>
                 </Route>
             </Router>
         )

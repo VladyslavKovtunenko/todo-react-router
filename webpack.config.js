@@ -10,7 +10,8 @@ module.exports = {
                 target: ' http://tasks-for-day.herokuapp.com',
                 changeOrigin: true
             }
-        }
+        },
+        historyApiFallback: true
     },
     module: {
         loaders: [

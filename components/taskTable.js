@@ -8,7 +8,6 @@ class TaskTable extends React.Component{
     constructor(props){
         super(props);
         this.props.getTasks();
-        //console.log(this.props.tasks);
     }
 
     render(){
@@ -18,6 +17,7 @@ class TaskTable extends React.Component{
                     <tr>
                         <td>Title</td>
                         <td>Description</td>
+                        <td>Active time</td>
                         <td>Actions</td>
                     </tr>
                 </thead>
