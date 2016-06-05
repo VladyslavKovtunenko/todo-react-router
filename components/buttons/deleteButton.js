@@ -1,7 +1,6 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
-import deleteTask from "../actions/deleteTask";
-import showTask from "../actions/showTask";
+import {deleteTask, showTask} from "../../actions/task.actions";
 import {connect} from 'react-redux'
 
 class DeleteButton extends React.Component{

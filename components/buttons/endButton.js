@@ -1,21 +1,21 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
-import endTask from "../actions/endTask";
+import {endTask, showTask} from "../../actions/task.actions";
 import {connect} from 'react-redux'
 
 class EndButton extends React.Component{
     constructor(props){
         super(props);
-        this.onclick = this.onclick.bind(this);
+        this.onСlick = this.onСlick.bind(this);
     }
 
-    onclick(e){
+    onСlick(e){
         e.preventDefault();
-        this.props.del(this.props.id);
+        this.props.end(this.props.id);
     }
 
     render(){
-        return <Button onClick={this.onclick}>End</Button>
+        return <Button onClick={this.onСlick}>End</Button>
     }
 }
 
@@ -27,8 +27,9 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        del: (id) => {
+        end: (id) => {
             dispatch(endTask(id));
+            dispatch(showTask());
         }
     }
 };

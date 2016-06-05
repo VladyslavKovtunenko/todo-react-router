@@ -1,9 +1,9 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
-import DeleteButton from './deleteButton'
-import StartButton from './startButton'
-import EndButton from './endButton'
-import ActiveTime from './activeTime'
+import DeleteButton from '../buttons/deleteButton'
+import StartButton from '../buttons/startButton'
+import EndButton from '../buttons/endButton'
+import ActiveTime from '../activeTime'
 
 class Task extends React.Component{
     constructor(props){

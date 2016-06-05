@@ -1,28 +1,26 @@
 import React from 'react'
+import Stopwatch from './stopwatch'
 
 class ActiveTime extends React.Component{
     constructor(props){
         super(props);
-        console.log(this.props);
+        // console.log(this.props.time);
     }
-
-    /*timeCalc(){
-     console.log(this.props.task);
-     if(this.props.task.finished_at != null){
-     this.state = {time: this.props.task.active_time};
-     // console.log(';p');
-     } else if(this.props.task.started_at != null){
-     let time = -Date.parse(this.props.task.started_at) + Date.now();
-     this.state = {time: time};
-     } else {
-     this.state = {time: 'do it'};
-     }
-     }*/
 
     render(){
         let time;
+        if (!this.props.time.start && !this.props.time.finish){
+            time = 'do it'
+        } else if (!this.props.time.start && this.props.time.finish){
+            time = this.props.time.active;
+        } else {
+            /*console.log(Date.now());
+            console.log(Date.parse(this.props.time.start));
+            console.log(Date.parse(this.props.start));*/
+            time = <Stopwatch activeTime = {Date.now() - Date.parse(this.props.time.start)}/>
+        }
 
-        return <div></div>
+        return <div>{time}</div>
     }
 }
 

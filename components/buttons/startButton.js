@@ -1,6 +1,6 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
-import startTask from "../actions/startTask";
+import {startTask, showTask} from "../../actions/task.actions";
 import {connect} from 'react-redux'
 
 class StartButton extends React.Component{
@@ -11,7 +11,7 @@ class StartButton extends React.Component{
 
     onclick(e){
         e.preventDefault();
-        this.props.del(this.props.id);
+        this.props.start(this.props.id);
     }
 
     render(){
@@ -27,8 +27,9 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        del: (id) => {
+        start: (id) => {
             dispatch(startTask(id));
+            dispatch(showTask());
         }
     }
 };
