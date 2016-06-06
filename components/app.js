@@ -64,12 +64,3 @@ class App extends React.Component {
 }
 
 export default App
-
-/*<Grid>
-<Row className="show-grid">
- <Col md={1}></Col>
- <Col md={5}>
-
- </Col>
-    </Row>
-    </Grid>*/

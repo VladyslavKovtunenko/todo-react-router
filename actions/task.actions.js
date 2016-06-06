@@ -44,7 +44,6 @@ export function startTask(id){
     };
 }
 export function endTask(id){
-    debugger;
     return {
         [CALL_API]: {
             endpoint: 'http://localhost:8080/api/v1/tasks/' + id + '/finish',

@@ -3,20 +3,29 @@ import React from 'react'
 class Stopwatch extends React.Component{
     constructor(props){
         super(props);
-        console.log(this.props.activeTime);
         this.state = {
             time: 0
         }
     }
 
     componentDidMount(){
-        let i = this.state.time;
-        setInterval(
+        let time;
+        setTimeout(
             () => {
-                ++i;
+
+                let seconds,
+                    minutes,
+                    hours;
+                ++time;
+
+                time = Math.floor(this.props.activeTime/100);
+                seconds = time % 100 % 60;
+                hours = Math.floor(time / 60 /60);
+                minutes = Math.floor((time - seconds) / 60) - hours * 60;
+                time = hours + ':' + minutes + ':' + seconds;
                 this.setState({
-                    time: i
-                })
+                    time: time
+                });
             },
             1000
         )
