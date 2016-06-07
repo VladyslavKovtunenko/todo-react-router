@@ -1,5 +1,5 @@
 import React from 'react'
-import Buttons from '../components/buttons'
+import Buttons from './buttons'
 import ActiveTime from '../components/activeTime'
 
 class Task extends React.Component{
