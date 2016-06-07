@@ -1,6 +1,5 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import {} from '../actions/task.actions'
 import { connect } from 'react-redux'
 import {Button} from 'react-bootstrap'
 import DeleteButton from './deleteButton'
