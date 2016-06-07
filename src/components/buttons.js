@@ -11,24 +11,23 @@ import * as TodoActionCreators from '../actions/task.actions'
 class Buttons extends React.Component {
     constructor(props){
         super(props);
-        console.log(this.props)
     }
 
 
     render() {
-
-        let boundActionCreators = bindActionCreators(TodoActionCreators, dispatch);
-        console.log(boundActionCreators);
-
         return (
             <div>
                 <Button>Edit</Button>
-                <DeleteButton id={this.props.id} {...boundActionCreators}/>
-                <StartButton id={this.props.id} {...boundActionCreators}/>
-                <EndButton id={this.props.id} {...boundActionCreators}/>
+                <DeleteButton id={this.props.id} />
+                <StartButton id={this.props.id} />
+                <EndButton id={this.props.id} />
             </div>
         )
     }
+}
+
+function mapStateToProps() {
+    return {};
 }
 
 function mapDispatchToProps(dispatch) {
@@ -40,6 +39,6 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-Buttons = connect(mapDispatchToProps)(Buttons);
+Buttons = connect(mapStateToProps, mapDispatchToProps)(Buttons);
 
 export default Buttons

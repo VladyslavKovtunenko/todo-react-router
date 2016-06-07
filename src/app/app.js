@@ -5,7 +5,7 @@ import {Grid, Row, Col, Button} from 'react-bootstrap'
 import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
 
 
-class Links extends React.Component {
+/*class Links extends React.Component {
     render() {
         return(
             <div>
@@ -13,7 +13,7 @@ class Links extends React.Component {
             </div>
         )
     }
-}
+}*/
 
 class Tasks extends React.Component {
     render() {
@@ -53,7 +53,7 @@ class App extends React.Component {
     render() {
         return (
             <Router history={browserHistory}>
-                <Route path="/" component={Links}>
+                <Route path="/" >
                     <IndexRoute component={Tasks}/>
                     <Route path="tasks" component={Tasks}/>
                     <Route path="tasks/new" component={NewTask}/>
@@ -62,5 +62,7 @@ class App extends React.Component {
         )
     }
 }
+
+// component={Links}
 
 export default App

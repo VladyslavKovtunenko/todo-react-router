@@ -25,12 +25,13 @@ class Stopwatch extends React.Component {
                     seconds = '0' + seconds;
                 }
                 hours = Math.floor(time / 60 /60);
+
                 minutes = Math.floor((time - seconds) / 60) - hours * 60;
                 if(minutes < 10){
                     minutes = '0' + minutes;
                 }
                 timeString = hours + ':' + minutes + ':' + seconds;
-                console.log(timeString);
+                //console.log(timeString);
                 this.setState({
                     time: timeString
                 });
