@@ -12,6 +12,18 @@ export function add(task) {
     }
 }
 
+export function editTask(task, id) {
+    return {
+        [CALL_API]: {
+            endpoint: 'http://localhost:8080/api/v1/tasks/' + id,
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(task),
+            types: ['EDIT_REQUEST', 'EDIT_SUCCESS', 'EDIT_FAILURE']
+        }
+    }
+}
+
 export function deleteTask(id){
     return {
         [CALL_API]: {
@@ -21,6 +33,8 @@ export function deleteTask(id){
         }
     };
 }
+
+
 
 export function showTask(){
     return {

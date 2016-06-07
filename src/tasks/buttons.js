@@ -1,7 +1,6 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {Button} from 'react-bootstrap'
 import DeleteButton from '../components/deleteButton'
 import StartButton from '../components/startButton'
 import EndButton from '../components/endButton'
@@ -10,9 +9,7 @@ import * as TodoActionCreators from '../actions/task.actions'
 class Buttons extends React.Component {
     constructor(props){
         super(props);
-        //console.log(this.props)
     }
-
 
     render() {
         return (
@@ -34,8 +31,7 @@ function mapDispatchToProps(dispatch) {
     return {
         deleteTask: bindActionCreators(TodoActionCreators.deleteTask, dispatch),
         endTask: bindActionCreators(TodoActionCreators.endTask, dispatch),
-        startTask: bindActionCreators(TodoActionCreators.startTask, dispatch)/*,
-        editTask: bindActionCreators(TodoActionCreators.editTask, dispatch)*/
+        startTask: bindActionCreators(TodoActionCreators.startTask, dispatch)
     }
 }
 
