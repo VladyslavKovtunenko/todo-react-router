@@ -11,7 +11,7 @@ class StartButton extends React.Component {
 
     onclick(e) {
         e.preventDefault();
-        this.props.start(this.props.id);
+        this.props.startTask(this.props.id);
     }
 
     render() {

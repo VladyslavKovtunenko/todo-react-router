@@ -11,7 +11,7 @@ class EndButton extends React.Component {
 
     onСlick(e) {
         e.preventDefault();
-        this.props.end(this.props.id);
+        this.props.endTask(this.props.id);
     }
 
     render() {
