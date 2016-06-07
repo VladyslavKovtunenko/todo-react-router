@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
 import {deleteTask, showTask} from "../../actions/task.actions";
-import {connect} from 'react-redux'
+//import {connect} from 'react-redux'
 
 class DeleteButton extends React.Component{
     constructor(props){
@@ -19,6 +19,7 @@ class DeleteButton extends React.Component{
     }
 }
 
+/*
 const mapStateToProps = (store) => {
     return {
         tasks: store
@@ -35,5 +36,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 DeleteButton = connect(mapStateToProps, mapDispatchToProps)(DeleteButton);
+*/
 
 export default DeleteButton

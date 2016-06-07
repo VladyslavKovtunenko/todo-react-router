@@ -1,8 +1,5 @@
 import React from 'react'
-import {Button} from 'react-bootstrap'
-import DeleteButton from '../buttons/deleteButton'
-import StartButton from '../buttons/startButton'
-import EndButton from '../buttons/endButton'
+import Buttons from '../buttons'
 import ActiveTime from '../activeTime'
 
 class Task extends React.Component{
@@ -24,13 +21,8 @@ class Task extends React.Component{
             <tr>
                 <td>{this.props.task.name}</td>
                 <td>{this.props.task.description}</td>
-                <td><ActiveTime time={this.time}/></td>
-                <td>
-                    <Button>Edit</Button>
-                    <DeleteButton id={this.props.task.id}/>
-                    <StartButton id={this.props.task.id}/>
-                    <EndButton id={this.props.task.id}/>
-                </td>
+                <td><ActiveTime time = {this.time}/></td>
+                <td><Buttons id = {this.props.task.id}/></td>
             </tr>
         )
     }
