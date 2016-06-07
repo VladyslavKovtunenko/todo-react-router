@@ -9,7 +9,7 @@ class Stopwatch extends React.Component {
     }
 
     componentDidMount() {
-        let time = Math.floor(this.props.activeTime/100);
+        let time = Math.floor(this.props.activeTime/1000);
 
         setInterval(
             () => {
@@ -24,14 +24,16 @@ class Stopwatch extends React.Component {
                 if(seconds < 10){
                     seconds = '0' + seconds;
                 }
-                hours = Math.floor(time / 60 /60);
 
-                minutes = Math.floor((time - seconds) / 60) - hours * 60;
+                minutes = Math.floor((time - seconds) / 60) % 60;
                 if(minutes < 10){
                     minutes = '0' + minutes;
                 }
+
+                hours = Math.floor(time / 3600);
+
                 timeString = hours + ':' + minutes + ':' + seconds;
-                //console.log(timeString);
+                console.log(timeString);
                 this.setState({
                     time: timeString
                 });
