@@ -1,20 +1,20 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
-import {endTask, showTask} from "../../actions/task.actions";
+import {endTask, showTask} from "../actions/task.actions";
 import {connect} from 'react-redux'
 
-class EndButton extends React.Component{
-    constructor(props){
+class EndButton extends React.Component {
+    constructor(props) {
         super(props);
         this.onСlick = this.onСlick.bind(this);
     }
 
-    onСlick(e){
+    onСlick(e) {
         e.preventDefault();
         this.props.end(this.props.id);
     }
 
-    render(){
+    render() {
         return <Button onClick={this.onСlick}>End</Button>
     }
 }

@@ -1,20 +1,20 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
-import {deleteTask, showTask} from "../../actions/task.actions";
+import {deleteTask, showTask} from "../actions/task.actions";
 //import {connect} from 'react-redux'
 
-class DeleteButton extends React.Component{
+class DeleteButton extends React.Component {
     constructor(props){
         super(props);
         this.onclick = this.onclick.bind(this);
     }
     
-    onclick(e){
+    onclick(e) {
         e.preventDefault();
         this.props.del(this.props.id);
     }
     
-    render(){
+    render() {
         return <Button onClick={this.onclick}>Delete</Button>
     }
 }

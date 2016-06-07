@@ -1,20 +1,20 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
-import {startTask, showTask} from "../../actions/task.actions";
+import {startTask, showTask} from "../actions/task.actions";
 import {connect} from 'react-redux'
 
-class StartButton extends React.Component{
+class StartButton extends React.Component {
     constructor(props){
         super(props);
         this.onclick = this.onclick.bind(this);
     }
 
-    onclick(e){
+    onclick(e) {
         e.preventDefault();
         this.props.start(this.props.id);
     }
 
-    render(){
+    render() {
         return <Button onClick={this.onclick}>Start</Button>
     }
 }

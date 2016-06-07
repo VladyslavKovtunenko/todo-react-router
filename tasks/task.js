@@ -1,6 +1,6 @@
 import React from 'react'
-import Buttons from '../buttons'
-import ActiveTime from '../activeTime'
+import Buttons from '../components/buttons'
+import ActiveTime from '../components/activeTime'
 
 class Task extends React.Component{
     constructor(props){

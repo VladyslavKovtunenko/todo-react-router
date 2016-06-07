@@ -1,6 +1,6 @@
 import React from 'react'
-import TaskTable from './view/taskTable'
-import AddTask from './view/addTask'
+import TaskTable from '../tasks/taskTable'
+import AddTask from '../tasks/addTask'
 import {Grid, Row, Col, Button} from 'react-bootstrap'
 import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router'
 

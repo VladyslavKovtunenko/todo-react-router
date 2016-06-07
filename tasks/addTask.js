@@ -1,6 +1,6 @@
 import React from 'react'
 import {FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
-import {showTask, add} from "../../actions/task.actions";
+import {showTask, add} from "../actions/task.actions";
 import {connect} from 'react-redux'
 
 class AddTask extends React.Component{

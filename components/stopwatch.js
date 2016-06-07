@@ -9,8 +9,7 @@ class Stopwatch extends React.Component {
     }
 
     componentDidMount() {
-        let time;
-        time = Math.floor(this.props.activeTime/100);
+        let time = Math.floor(this.props.activeTime/100);
 
         setInterval(
             () => {

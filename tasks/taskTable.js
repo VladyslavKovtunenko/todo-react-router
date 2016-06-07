@@ -2,7 +2,7 @@ import React from 'react'
 import {Table} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import Task from './task'
-import {showTask} from "../../actions/task.actions"
+import {showTask} from "../actions/task.actions"
 
 class TaskTable extends React.Component{
     constructor(props){
