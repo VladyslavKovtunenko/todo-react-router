@@ -1,5 +1,6 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import {Button} from 'react-bootstrap'
 import DeleteButton from './buttons/deleteButton'
 import StartButton from './buttons/startButton'
@@ -34,4 +35,3 @@ class Buttons extends React.Component {
 }
 
 export default Buttons
-

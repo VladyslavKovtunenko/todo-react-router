@@ -1,18 +1,16 @@
-import fetch from 'isomorphic-fetch';
+import { CALL_API } from 'redux-api-middleware';
 
 export function add(task) {
-    fetch('http://localhost:8080/api/v1/tasks/', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(task)
-    });
-    return {type: 'SEND'};
+    return {
+        [CALL_API]: {
+            endpoint: 'http://localhost:8080/api/v1/tasks',
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(task),
+            types: ['ADD_REQUEST', 'ADD_SUCCESS', 'ADD_FAILURE']
+        }
+    }
 }
-
-import { CALL_API } from 'redux-api-middleware';
 
 export function deleteTask(id){
     return {
