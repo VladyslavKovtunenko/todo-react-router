@@ -5,6 +5,7 @@ import NewTask from './newTask'
 import Home from './home'
 import SingIn from './singIn'
 import BigTask from '../tasks/bigTask'
+import EditTask from '../tasks/editTask'
 
 class App extends React.Component {
     render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
                     <Route path="signIn" component={SingIn}/>
                     <Route path="tasks" component={Tasks}/>
                     <Route path="tasks/:id" component={BigTask}/>
+                    <Route path="tasks/:id/edit" component={EditTask}/>
                     <Route path="tasks/new" component={NewTask}/>
                 </Route>
             </Router>

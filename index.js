@@ -12,5 +12,3 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('container')
 );
-
-console.log(store.getState());
