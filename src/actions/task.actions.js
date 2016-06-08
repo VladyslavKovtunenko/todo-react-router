@@ -12,6 +12,18 @@ export function add(task) {
     }
 }
 
+export function singIn(user) {
+    return {
+        [CALL_API]: {
+            endpoint: 'http://localhost:8080/api/v1/signin',
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(user),
+            types: ['SING_IN_REQUEST', 'SING_IN_SUCCESS', 'SING_IN_FAILURE']
+        }
+    }
+}
+
 export function editTask(task, id) {
     return {
         [CALL_API]: {

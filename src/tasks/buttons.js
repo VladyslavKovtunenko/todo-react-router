@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import DeleteButton from '../components/deleteButton'
 import StartButton from '../components/startButton'
 import EndButton from '../components/endButton'
+import {Button} from 'react-bootstrap'
 import * as TodoActionCreators from '../actions/task.actions'
 
 class Buttons extends React.Component {
