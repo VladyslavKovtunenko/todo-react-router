@@ -1,24 +1,30 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import DeleteButton from '../components/deleteButton'
-import StartButton from '../components/startButton'
-import EndButton from '../components/endButton'
 import {Button} from 'react-bootstrap'
 import * as TodoActionCreators from '../actions/task.actions'
 
 class Buttons extends React.Component {
-    constructor(props){
-        super(props);
-    }
+
+    deleteTask = () => {
+        this.props.deleteTask(this.props.id);
+    };
+
+    startTask = () => {
+        this.props.startTask(this.props.id);
+    };
+
+    endTask = () => {
+        this.props.endTask(this.props.id)
+    };
 
     render() {
         return (
             <div>
                 <Button>Edit</Button>
-                <DeleteButton id = {this.props.id} deleteTask = {this.props.deleteTask} />
-                <StartButton id = {this.props.id} startTask = {this.props.startTask} />
-                <EndButton id = {this.props.id} endTask = {this.props.endTask} />
+                <Button onClick={this.deleteTask}>Delete</Button>
+                <Button onClick={this.startTask}>Start</Button>
+                <Button onClick={this.endTask}>End</Button>
             </div>
         )
     }
