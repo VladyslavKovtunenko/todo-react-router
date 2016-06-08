@@ -5,7 +5,6 @@ class DeleteButton extends React.Component {
     constructor(props){
         super(props);
         this.onclick = this.onclick.bind(this);
-        console.log(props);
     }
     
     onclick(e) {

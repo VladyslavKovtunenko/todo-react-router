@@ -1,9 +1,15 @@
-export const todo = (state = [], action) => {
+export const todo = (state = {tasks: [], authorization: false}, action) => {
     switch (action.type){
         case 'SUCCESS':
-            return action.payload.tasks;
-        case 'FAILURE':
-            return state;
+            return {
+                tasks: action.payload.tasks,
+                authorization: state.authorization
+            };
+        case 'SING_IN_SUCCESS':
+            return {
+                tasks: state.tasks,
+                authorization: true
+            };
         default:
             return state;
     }

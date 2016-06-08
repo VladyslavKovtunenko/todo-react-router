@@ -33,7 +33,6 @@ class Stopwatch extends React.Component {
                 hours = Math.floor(time / 3600);
 
                 timeString = hours + ':' + minutes + ':' + seconds;
-                console.log(timeString);
                 this.setState({
                     time: timeString
                 });
