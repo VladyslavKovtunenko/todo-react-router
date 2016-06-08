@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import Task from './task'
 import {showTask} from "../actions/task.actions"
 
-
 class TaskTable extends React.Component{
     constructor(props){
         super(props);
