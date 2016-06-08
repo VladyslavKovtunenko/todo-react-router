@@ -7,7 +7,7 @@ class BigActiveTime extends React.Component {
     }
 
     render() {
-        return <h2><ActiveTime/></h2>
+        return <h2><ActiveTime time = {this.props.time}/></h2>
     }
 
 }

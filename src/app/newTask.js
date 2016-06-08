@@ -4,7 +4,6 @@ import {Grid, Row, Col, Button} from 'react-bootstrap'
 import {Link} from 'react-router'
 import NavBar from './navBar'
 
-
 class NewTask extends React.Component {
     render() {
         return (

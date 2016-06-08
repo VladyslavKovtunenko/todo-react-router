@@ -12,13 +12,15 @@ class Task extends React.Component{
             start: this.props.task.started_at,
             finish: this.props.task.finished_at,
             active: this.props.task.active_time
-        }
+        };
+
+        this.path = "/tasks/" + this.props.task.id
     }
 
     render(){
         return (
             <tr>
-                <td><Link to="/tasks/{:id}">{this.props.task.name}</Link></td>
+                <td><Link to={this.path}>{this.props.task.name}</Link></td>
                 <td>{this.props.task.description}</td>
                 <td><ActiveTime time = {this.time}/></td>
                 <td><Buttons id = {this.props.task.id}/></td>
