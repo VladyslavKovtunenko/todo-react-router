@@ -1,5 +1,5 @@
 // export const todo = (state = {tasks: [], authorization: false}, action) => {
-export const todo = (state = [], action) => {
+export const todo = (state = {}, action) => {
     switch (action.type){
         /*case 'SUCCESS':
             return {
@@ -12,7 +12,11 @@ export const todo = (state = [], action) => {
                 authorization: true
             };*/
         case 'SUCCESS':
-            return action.payload.tasks;
+            let tmp = action.payload.tasks;
+            return {
+                tasks: tmp,
+                task: state.task
+            };
         default:
             return state;
     }
