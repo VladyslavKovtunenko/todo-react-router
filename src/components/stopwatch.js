@@ -6,12 +6,14 @@ class Stopwatch extends React.Component {
         this.state = {
             time: 0
         };
+
+        this.timerId = null;
     }
 
     componentDidMount() {
         let time = Math.floor(this.props.activeTime/1000);
 
-        setInterval(
+        this.timerId = setInterval(
             () => {
                 let seconds,
                     minutes,
@@ -39,6 +41,10 @@ class Stopwatch extends React.Component {
             },
             1000
         );
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.timerId);
     }
 
     render() {
