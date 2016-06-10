@@ -1,7 +1,8 @@
 import React from 'react'
 import NavBar from '../app/navBar'
 import {connect} from 'react-redux'
-import {Grid, Row, Col, FormControl, FormGroup, ControlLabel} from 'react-bootstrap'
+import {Grid, Row, Col, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
+import {Link} from 'react-router'
 import {editTask} from "../actions/task.actions";
 
 class EditTask extends React.Component{
@@ -21,6 +22,8 @@ class EditTask extends React.Component{
             id: id
         };
 
+        this.path = "/tasks/" + this.state.id;
+        this.save = this.save.bind(this);
         this.changeTitle = this.changeTitle.bind(this);
         this.changeDescription = this.changeDescription.bind(this);
     }
@@ -33,6 +36,16 @@ class EditTask extends React.Component{
     changeDescription(e){
         e.preventDefault();
         this.setState({ description: e.target.value });
+    }
+
+    save(){
+        const task = {
+            name: this.state.name,
+            description: this.state.description
+        };
+
+        console.log(task);
+        this.props.editTask(task, this.state.id);
     }
 
     render(){
@@ -68,6 +81,14 @@ class EditTask extends React.Component{
                         </FormGroup>
                     </Col>
                 </Row>
+                <Row>
+                    <Col md={3}/>
+                    <Col md={7}>
+                        <Link to={this.path}>
+                            <Button onClick={this.save}>Save</Button>
+                        </Link>
+                    </Col>
+                </Row>
             </Grid>
         )
 
@@ -82,8 +103,8 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        edit: (task) => {
-            dispatch(editTask(task));
+        editTask: (task, id) => {
+            dispatch(editTask(task, id));
         }
     };
 };

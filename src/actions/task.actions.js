@@ -28,7 +28,7 @@ export function editTask(task, id) {
     return {
         [CALL_API]: {
             endpoint: 'http://localhost:8080/api/v1/tasks/' + id,
-            method: 'POST',
+            method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(task),
             types: ['EDIT_REQUEST', 'EDIT_SUCCESS', 'EDIT_FAILURE']
@@ -72,7 +72,17 @@ export function endTask(id){
         [CALL_API]: {
             endpoint: 'http://localhost:8080/api/v1/tasks/' + id + '/finish',
             method: 'PATCH',
-            types: ['FINISH_REQUEST', ' FINISH_SUCCESS', ' FINISH_FAILURE']
+            types: ['END_REQUEST', ' END_SUCCESS', ' END_FAILURE']
+        }
+    };
+}
+
+export function getTask(id){
+    return {
+        [CALL_API]: {
+            endpoint: 'http://localhost:8080/api/v1/tasks/' + id,
+            method: 'PATCH',
+            types: ['GET_REQUEST', ' GET_SUCCESS', ' GET_FAILURE']
         }
     };
 }

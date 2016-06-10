@@ -22,7 +22,7 @@ class Buttons extends React.Component {
     render() {
         return (
             <div>
-                <Link to={"tasks" + this.props.id + "edit"}><Button>Edit</Button></Link>
+                <Link to={"tasks/" + this.props.id + "/edit"}><Button>Edit</Button></Link>
                 <Button onClick={this.deleteTask}>Delete</Button>
                 <Button onClick={this.startTask}>Start</Button>
                 <Button onClick={this.endTask}>End</Button>
