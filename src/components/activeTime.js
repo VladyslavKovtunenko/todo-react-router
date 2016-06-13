@@ -2,9 +2,6 @@ import React from 'react'
 import Stopwatch from './stopwatch'
 
 class ActiveTime extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         let time;

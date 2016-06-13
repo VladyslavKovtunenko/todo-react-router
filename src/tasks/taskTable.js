@@ -7,10 +7,8 @@ import {showTask} from "../actions/task.actions"
 class TaskTable extends React.Component{
     constructor(props){
         super(props);
+        
         this.props.getTasks();
-
-        console.log(this.props); //undefined
-        console.log(this.props.tasks); //undefined
     }
 
     render(){
@@ -34,9 +32,9 @@ class TaskTable extends React.Component{
     }
 }
 
-const mapStateToProps = (store) => {
+const mapStateToProps = ({tasks}) => {
     return {
-        tasks: store.tasks
+        tasks
     }
 };
 

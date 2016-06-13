@@ -46,8 +46,6 @@ export function deleteTask(id){
     };
 }
 
-
-
 export function showTask(){
     return {
         [CALL_API]: {
@@ -81,7 +79,7 @@ export function getTask(id){
     return {
         [CALL_API]: {
             endpoint: 'http://localhost:8080/api/v1/tasks/' + id,
-            method: 'PATCH',
+            method: 'GET',
             types: ['GET_REQUEST', 'GET_SUCCESS', ' GET_FAILURE']
         }
     };

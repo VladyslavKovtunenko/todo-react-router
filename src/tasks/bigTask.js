@@ -4,28 +4,24 @@ import BigActiveTime from '../components/bigActiveTime'
 import NavBar from '../app/navBar'
 import {connect} from 'react-redux'
 import {Grid, Row, Col} from 'react-bootstrap'
+import {getTask} from "../actions/task.actions"
 
 class BigTask extends React.Component{
     constructor(props){
         super(props);
-        
-        let url = window.location.href;
-        url = url.split('/');
-        let id = url[url.length - 1];
-        let task = this.props.tasks.filter((task) => {if(task.id == id) return task});
 
-        task = task[0];
+        let id = this.props.params.id;
+        // let task = {};
 
-        this.state = {
+        this.props.getTask(id);
+
+        /*this.state = {
             time : {
-                start: task.started_at,
-                finish: task.finished_at,
-                active: task.active_time
-            },
-            name: task.name,
-            description: task.description,
-            id: id
-        };
+                start: this.props.task.started_at,
+                finish: this.props.task.finished_at,
+                active: this.props.task.active_time
+            }
+        };*/
     }
 
     render(){
@@ -34,7 +30,7 @@ class BigTask extends React.Component{
                 <Row className="show-grid">
                     <Col md={3}/>
                     <Col md={7}>
-                        <h2>{this.state.name}</h2>
+                        <h2>{this.props.task.name}</h2>
                     </Col>
                 </Row>
                 <Row className="show-grid">
@@ -43,9 +39,17 @@ class BigTask extends React.Component{
                     </Col>
                     <Col md={1}/>
                     <Col md={7}>
-                        <h3>{this.state.description}</h3>
-                        <BigActiveTime time = {this.state.time}/>
-                        <Buttons id = {this.state.id}/>
+                        <h3>{this.props.task.description}</h3>
+                        <BigActiveTime
+                            time = {{
+                                time: {
+                                    start: this.props.task.started_at,
+                                    finish: this.props.task.finished_at,
+                                    active: this.props.task.active_time
+                                }
+                            }}
+                        />
+                        <Buttons id = {this.props.params.id}/>
                     </Col>
                 </Row>
             </Grid>
@@ -54,14 +58,16 @@ class BigTask extends React.Component{
     }
 }
 
-const mapStateToProps = (store) => {
-    return {
-        tasks: store
-    }
+const mapStateToProps = ({task}) => {
+    return {task}
 };
 
-const mapDispatchToProps = () => {
-    return {};
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getTask: (id) => {
+            dispatch(getTask(id))
+        }
+    }
 };
 
 BigTask = connect(mapStateToProps, mapDispatchToProps)(BigTask);
