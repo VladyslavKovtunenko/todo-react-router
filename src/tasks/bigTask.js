@@ -11,17 +11,8 @@ class BigTask extends React.Component{
         super(props);
 
         let id = this.props.params.id;
-        // let task = {};
 
         this.props.getTask(id);
-
-        /*this.state = {
-            time : {
-                start: this.props.task.started_at,
-                finish: this.props.task.finished_at,
-                active: this.props.task.active_time
-            }
-        };*/
     }
 
     render(){
