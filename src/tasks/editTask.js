@@ -3,31 +3,33 @@ import NavBar from '../app/navBar'
 import {connect} from 'react-redux'
 import {Grid, Row, Col, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
 import {Link} from 'react-router'
-import {editTask} from "../actions/task.actions";
+import {editTask, getTask} from "../actions/task.actions";
 
 class EditTask extends React.Component{
     constructor(props){
         super(props);
 
-        let url = window.location.href;
-        url = url.split('/');
-        let id = url[url.length - 2];
-        let task = this.props.tasks.filter((task) => {if(task.id == id) return task});
-
-        task = task[0];
+        let id = this.props.params.id;
+        this.props.getTask(id);
 
         this.state = {
-            name: task.name,
-            description: task.description,
-            id: id
+            name: 'Title',
+            description: 'Description'
         };
 
-        this.path = "/tasks/" + this.state.id;
+        this.path = "/tasks/" + id;
         this.save = this.save.bind(this);
         this.changeTitle = this.changeTitle.bind(this);
         this.changeDescription = this.changeDescription.bind(this);
     }
 
+    componentWillReceiveProps(nextProps){
+        this.setState({
+            name: nextProps.task.name,
+            description: nextProps.task.description
+        });
+    }
+    
     changeTitle(e){
         e.preventDefault();
         this.setState({ name: e.target.value });
@@ -45,7 +47,7 @@ class EditTask extends React.Component{
         };
 
         console.log(task);
-        this.props.editTask(task, this.state.id);
+        this.props.editTask(task, this.props.params.id);
     }
 
     render(){
@@ -95,9 +97,9 @@ class EditTask extends React.Component{
     }
 }
 
-const mapStateToProps = (store) => {
+const mapStateToProps = ({task}) => {
     return {
-        tasks: store
+        task
     }
 };
 
@@ -105,6 +107,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         editTask: (task, id) => {
             dispatch(editTask(task, id));
+        },
+        getTask: (id) => {
+            dispatch(getTask(id))
         }
     };
 };
