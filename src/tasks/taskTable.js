@@ -9,6 +9,7 @@ class TaskTable extends React.Component{
         super(props);
         this.props.getTasks();
 
+        console.log(this.props); //undefined
         console.log(this.props.tasks); //undefined
     }
 

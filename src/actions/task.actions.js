@@ -82,7 +82,7 @@ export function getTask(id){
         [CALL_API]: {
             endpoint: 'http://localhost:8080/api/v1/tasks/' + id,
             method: 'PATCH',
-            types: ['GET_REQUEST', ' GET_SUCCESS', ' GET_FAILURE']
+            types: ['GET_REQUEST', 'GET_SUCCESS', ' GET_FAILURE']
         }
     };
 }
