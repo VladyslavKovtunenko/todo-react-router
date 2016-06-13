@@ -4,6 +4,7 @@ import Stopwatch from './stopwatch'
 class ActiveTime extends React.Component {
 
     render() {
+
         let time;
         if (!this.props.time.start && !this.props.time.finish){
             time = 'do it'

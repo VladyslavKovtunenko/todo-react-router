@@ -41,13 +41,13 @@ class BigTask extends React.Component{
                     <Col md={7}>
                         <h3>{this.props.task.description}</h3>
                         <BigActiveTime
-                            time = {{
-                                time: {
+                            time = {
+                                {
                                     start: this.props.task.started_at,
                                     finish: this.props.task.finished_at,
                                     active: this.props.task.active_time
                                 }
-                            }}
+                            }
                         />
                         <Buttons id = {this.props.params.id}/>
                     </Col>
