@@ -4,7 +4,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import Tasks from './tasks'
 import NewTask from './newTask'
 import Home from './home'
-import SingIn from './singIn'
+import SingIn from './signIn'
+import SingUp from './signUp'
 import BigTask from '../tasks/bigTask'
 import EditTask from '../tasks/editTask'
 
@@ -15,6 +16,7 @@ class App extends React.Component {
                 <Route path="/" >
                     <IndexRoute component={Home}/>
                     <Route path="signIn" component={SingIn}/>
+                    <Route path="signUp" component={SingUp}/>
                     <Route path="tasks" component={Tasks}/>
                     <Route path="tasks/:id" component={BigTask}/>
                     <Route path="tasks/:id/edit" component={EditTask}/>

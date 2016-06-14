@@ -9,35 +9,38 @@ class EditTask extends React.Component{
     constructor(props){
         super(props);
 
-        let id = this.props.params.id;
+        const {id} = props.params;
         this.props.getTask(id);
 
         this.state = {
             name: 'Title',
-            description: 'Description'
+            description: 'Description',
+            path: '/tasks/${id}'
         };
 
-        this.path = "/tasks/" + id;
         this.save = this.save.bind(this);
         this.changeTitle = this.changeTitle.bind(this);
         this.changeDescription = this.changeDescription.bind(this);
     }
 
     componentWillReceiveProps(nextProps){
-        this.setState({
-            name: nextProps.task.name,
-            description: nextProps.task.description
-        });
+
+        const { task } = nextProps;
+        if (this.task !== task) {
+            this.setState({ task });
+        }
     }
     
     changeTitle(e){
         e.preventDefault();
         this.setState({ name: e.target.value });
+        // this.setState({ task: task.set(e.target.name, e.target.value)});
     }
 
     changeDescription(e){
         e.preventDefault();
         this.setState({ description: e.target.value });
+        // this.setState({ task: task.set(e.target.name, e.target.value)});
     }
 
     save(){
@@ -86,7 +89,7 @@ class EditTask extends React.Component{
                 <Row>
                     <Col md={3}/>
                     <Col md={7}>
-                        <Link to={this.path}>
+                        <Link to={this.state.path}>
                             <Button onClick={this.save}>Save</Button>
                         </Link>
                     </Col>

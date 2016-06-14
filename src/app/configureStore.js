@@ -2,10 +2,12 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { apiMiddleware } from 'redux-api-middleware';
 import taskReducer from "../reducers/task.reducer";
 import tasksReducer from "../reducers/tasks.reducer";
+import isLoginReducer from "../reducers/isLogin.reducer";
 
 const reducer = combineReducers({
     task: taskReducer,
-    tasks: tasksReducer
+    tasks: tasksReducer,
+    isLogin: isLoginReducer
 });
 
 const createStoreWithMiddleware = applyMiddleware(apiMiddleware)(createStore);

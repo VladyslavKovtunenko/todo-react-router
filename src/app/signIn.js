@@ -1,5 +1,5 @@
 import React from 'react'
-import {singIn} from '../actions/task.actions'
+import {signIn} from '../actions/user.actions'
 import {Grid, Row, Col, Button, FormControl, FormGroup, ControlLabel} from 'react-bootstrap'
 import NavBar from './navBar'
 import {connect} from 'react-redux'
@@ -29,7 +29,7 @@ class SingIn extends React.Component {
     }
 
     send(){
-        const user = {
+        let user = {
             email: this.state.email,
             password: this.state.pass
         };
@@ -40,7 +40,7 @@ class SingIn extends React.Component {
             pass: ''
         });
 
-        this.props.singIn(user);
+        this.props.signIn(user);
     }
 
     render() {
@@ -94,8 +94,8 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        singIn: (user) => {
-            dispatch(singIn(user));
+        signIn: (user) => {
+            dispatch(signIn(user));
         }
     }
 };
