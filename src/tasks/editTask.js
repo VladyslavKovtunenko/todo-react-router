@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {Grid, Row, Col, FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
 import {Link} from 'react-router'
 import {editTask, getTask} from "../actions/task.actions";
+import {OrderedMap} from 'immutable'
 
 class EditTask extends React.Component{
     constructor(props){
@@ -12,9 +13,12 @@ class EditTask extends React.Component{
         const {id} = props.params;
         this.props.getTask(id);
 
+        let task = OrderedMap();
+
+        task.set([['name', 'Title'], ['description', 'Description']]);
+
         this.state = {
-            name: 'Title',
-            description: 'Description',
+            task: task,
             path: '/tasks/${id}'
         };
 
@@ -25,26 +29,32 @@ class EditTask extends React.Component{
 
     componentWillReceiveProps(nextProps){
 
-        /*const { task } = nextProps;
-        if (this.task !== task) {
+        const { task } = nextProps;
+        if (this.state.task !== task) {
             this.setState({ task });
-        }*/
-        this.setState({
+        }
+        /*this.setState({
             name: nextProps.task.name,
             description: nextProps.task.description
-        });
+        });*/
     }
     
     changeTitle(e){
         e.preventDefault();
-        this.setState({ name: e.target.value });
-        // this.setState({ task: task.set(e.target.name, e.target.value)});
+        let task = this.state.task;
+        // this.setState({ name: e.target.value });
+        this.setState({
+            task: task.set({name: e.target.value})
+        });
     }
 
     changeDescription(e){
         e.preventDefault();
-        this.setState({ description: e.target.value });
-        // this.setState({ task: task.set(e.target.name, e.target.value)});
+        let task = this.state.task;
+        // this.setState({ description: e.target.value });
+        this.setState({
+            task: task.set({description: e.target.value})
+        });
     }
 
     save(){
