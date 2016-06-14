@@ -25,17 +25,15 @@ class NavBar extends React.Component {
             };
         } else {
             firstButton = {
-                path: "/signIn",
+                path: "/login",
                 value: "Sign in"
             };
             secondButton = {
-                path: "/signUp",
+                path: "/registration",
                 value: "Sign up",
                 onClick: () => {}
             };
         }
-
-        // onClick={secondButton.onClick}
         
         return (
             <Nav bsStyle="pills" stacked activeKey={1}>

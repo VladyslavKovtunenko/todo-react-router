@@ -21,7 +21,7 @@ class Tasks extends React.Component {
                     <Col md={1}/>
                     <Col md={8}>
                         <TaskTable/>
-                        <Link to="/tasks/new"><Button>New task</Button></Link>
+                        <Link to="tasks/new"><Button>New task</Button></Link>
                     </Col>
                 </Row>
             </Grid>

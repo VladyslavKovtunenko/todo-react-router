@@ -25,10 +25,14 @@ class EditTask extends React.Component{
 
     componentWillReceiveProps(nextProps){
 
-        const { task } = nextProps;
+        /*const { task } = nextProps;
         if (this.task !== task) {
             this.setState({ task });
-        }
+        }*/
+        this.setState({
+            name: nextProps.task.name,
+            description: nextProps.task.description
+        });
     }
     
     changeTitle(e){

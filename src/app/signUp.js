@@ -116,12 +116,11 @@ const mapStateToProps = (store) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         signUp: (user) => {
-            dispatch(signUp(user));  //need to create and import
+            dispatch(signUp(user));
         }
     }
 };
 
 SingUp = connect(mapStateToProps, mapDispatchToProps)(SingUp);
-
 
 export default SingUp

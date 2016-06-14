@@ -102,5 +102,4 @@ const mapDispatchToProps = (dispatch) => {
 
 SingIn = connect(mapStateToProps, mapDispatchToProps)(SingIn);
 
-
 export default SingIn

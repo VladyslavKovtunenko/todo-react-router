@@ -15,12 +15,12 @@ class App extends React.Component {
             <Router history={browserHistory}>
                 <Route path="/" >
                     <IndexRoute component={Home}/>
-                    <Route path="signIn" component={SingIn}/>
-                    <Route path="signUp" component={SingUp}/>
+                    <Route path="login" component={SingIn}/>
+                    <Route path="registration" component={SingUp}/>
                     <Route path="tasks" component={Tasks}/>
+                    <Route path="tasks/new" component={NewTask}/>
                     <Route path="tasks/:id" component={BigTask}/>
                     <Route path="tasks/:id/edit" component={EditTask}/>
-                    <Route path="tasks/new" component={NewTask}/>
                 </Route>
             </Router>
         )

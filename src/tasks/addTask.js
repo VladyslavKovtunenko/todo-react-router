@@ -2,6 +2,7 @@ import React from 'react'
 import {FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap'
 import {showTask, add} from "../actions/task.actions";
 import {connect} from 'react-redux'
+import {Link} from 'react-router'
 
 class AddTask extends React.Component{
     constructor(props){
@@ -60,9 +61,11 @@ class AddTask extends React.Component{
                         onChange={this.changeDescription}
                     />
                 </FormGroup>
-                <Button onClick={this.send}>
-                    Send
-                </Button>
+                <Link to="/tasks">
+                    <Button onClick={this.send}>
+                        Send
+                    </Button>
+                </Link>
             </form>
         )
     }
