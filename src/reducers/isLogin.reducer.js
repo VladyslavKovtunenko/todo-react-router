@@ -1,5 +1,3 @@
-console.log('lol' + window.sessionStorage.getItem('isLogin'));
-
 export default (state = JSON.parse(window.sessionStorage.getItem('isLogin')), action) => {
     switch (action.type){
         case 'SING_IN_SUCCESS':
